@@ -39,6 +39,7 @@ def main() -> None:
     df = transform(data)
     cleanse_names(df)
     cleanse_book_key(df)
+    add_surrogate_keys(df)
     upload_processed_to_local(df, OUT_PATH)
     #upload_processed_to_s3(df, S3_BUCKET, S3_KEY)
 
@@ -112,6 +113,18 @@ def cleanse_names(df: pd.DataFrame) -> None:
 def cleanse_book_key(df: pd.DataFrame) -> None:
     """ Modifies dataframe in place -> extracts book key from key column"""
     df['key'] = df['key'].str.split('/').str[-1]
+
+
+def add_surrogate_keys(df: pd.DataFrame) -> None:
+    """ Modifies dataframe in place -> adds surrogate keys for authors and books"""
+    authors = {
+        author: idx+1 for idx, author in enumerate(df.author.unique())
+    }
+    books = {
+        key: idx+1 for idx, key in enumerate(df.key.unique())
+    }
+    df['author_id'] = df['author'].map(authors)
+    df['book_id'] = df['key'].map(books)
 
 
 def upload_processed_to_local(df: pd.DataFrame, path: str) -> None:
