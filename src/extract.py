@@ -20,7 +20,7 @@ logging.basicConfig(
 DATE = datetime.datetime.now(datetime.UTC).strftime('%Y-%m-%d')
 EXTRACT_URL = 'https://openlibrary.org/subjects/fantasy.json?details=false'
 S3_BUCKET = 'test-bucket'
-S3_KEY = f'authors/authors_processed_{DATE}.json'
+S3_KEY = f'authors/full_processed_{DATE}.json'
 ACCESS_KEY = os.getenv('aws_access_key', None)
 SECRET_KEY = os.getenv('aws_secret_key', None)
 
