@@ -47,6 +47,7 @@ def load_data_from_local(path) -> pd.DataFrame:
 
 def load_data_from_s3(bucket: str, key: str) -> pd.DataFrame:
     """ Load processed data from s3. Note: this is mocked for demo purposes and untested """
+    logger.info(f'Reading {key} from bucket {bucket} to dataframe.')
     s3 = get_boto3_client()
     s3_obj = s3.get_object(Bucket=bucket, Key=key) 
     text = s3_obj["Body"].read().decode()
@@ -55,6 +56,7 @@ def load_data_from_s3(bucket: str, key: str) -> pd.DataFrame:
 
 def insert_records(data: list, table: str, columns: str) -> None:
     """ Mocked for demo. Inserts a dataframe to database as a table """
+    logger.info(f'Loading {len(data)} records to {table}')
     # creds = get_db_creds()
     # with conn as db_connect(creds):
     #   cursor = conn.cursor()
@@ -64,6 +66,7 @@ def insert_records(data: list, table: str, columns: str) -> None:
 
 def generate_authors_table(df: pd.DataFrame) -> pd.DataFrame:
     """ Generates a full refresh authors dimensional table from dataframe """
+    logger.info('Generating authors table.')
     authors = df.copy(deep=True)
     authors['created_datetime'] = pd.Timestamp('now')
     authors = authors[['author_id', 'author', 'author_firstname', 'author_lastname', 'created_datetime']]
@@ -75,6 +78,7 @@ def generate_authors_table(df: pd.DataFrame) -> pd.DataFrame:
 
 def generate_books_table(df: pd.DataFrame) -> pd.DataFrame:
     """ Generates a full refresh books dimensional table from dataframe """
+    logger.info('Generating authors table.')
     books = df.copy(deep=True)
     books['created_datetime'] = pd.Timestamp('now')
     books = books[['book_id', 'author_id', 'key', 'title', 'first_publish_year', 'created_datetime']]
