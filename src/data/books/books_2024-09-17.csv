@@ -1,0 +1,13 @@
+book_id,author_id,key,title,first_publish_year,created_datetime
+1,1,OL138052W,Alice's Adventures in Wonderland,1865,2024-09-16 18:25:46.755247
+2,2,OL24034W,Treasure Island,1880,2024-09-16 18:25:46.755247
+3,3,OL20600W,Gulliver's Travels,1726,2024-09-16 18:25:46.755247
+4,4,OL1089297W,The Prince,1515,2024-09-16 18:25:46.755247
+5,1,OL151406W,Through the Looking-Glass,1871,2024-09-16 18:25:46.755247
+6,12,OL18417W,The Wonderful Wizard of Oz,1900,2024-09-16 18:25:46.755247
+7,13,OL262460W,The Lost World,1900,2024-09-16 18:25:46.755247
+8,14,OL259010W,A Midsummer Night's Dream,1600,2024-09-16 18:25:46.755247
+9,15,OL99499W,Five Children and It,1905,2024-09-16 18:25:46.755247
+10,1,OL151411W,Alice's Adventures in Wonderland / Through the Looking Glass,1889,2024-09-16 18:25:46.755247
+11,16,OL27482W,The Hobbit,1937,2024-09-16 18:25:46.755247
+12,17,OL1168083W,Nineteen Eighty-Four,1949,2024-09-16 18:25:46.755247

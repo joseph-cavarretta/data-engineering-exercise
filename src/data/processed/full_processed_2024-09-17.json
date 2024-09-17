@@ -1,0 +1,20 @@
+key,title,first_publish_year,author,author_firstname,author_lastname,author_id,book_id
+OL138052W,Alice's Adventures in Wonderland,1865,Lewis Carroll,Lewis,Carroll,1,1
+OL24034W,Treasure Island,1880,Robert Louis Stevenson,Robert Louis,Stevenson,2,2
+OL20600W,Gulliver's Travels,1726,Jonathan Swift,Jonathan,Swift,3,3
+OL1089297W,The Prince,1515,Niccolò Machiavelli,Niccolò,Machiavelli,4,4
+OL1089297W,The Prince,1515,W Grüzmacher,W,Grüzmacher,5,4
+OL1089297W,The Prince,1515,George Bull,George,Bull,6,4
+OL1089297W,The Prince,1515,Jon Lee Anderson,Jon Lee,Anderson,7,4
+OL1089297W,The Prince,1515,Eko,,Eko,8,4
+OL1089297W,The Prince,1515,Ninian Hill Thomson,Ninian Hill,Thomson,9,4
+OL1089297W,The Prince,1515,Yovelina Del Jesus,Yovelina Del,Jesus,10,4
+OL1089297W,The Prince,1515,Angelo M Codevilla,Angelo M,Codevilla,11,4
+OL151406W,Through the Looking-Glass,1871,Lewis Carroll,Lewis,Carroll,1,5
+OL18417W,The Wonderful Wizard of Oz,1900,L Frank Baum,L Frank,Baum,12,6
+OL262460W,The Lost World,1900,Arthur Conan Doyle,Arthur Conan,Doyle,13,7
+OL259010W,A Midsummer Night's Dream,1600,William Shakespeare,William,Shakespeare,14,8
+OL99499W,Five Children and It,1905,Edith Nesbit,Edith,Nesbit,15,9
+OL151411W,Alice's Adventures in Wonderland / Through the Looking Glass,1889,Lewis Carroll,Lewis,Carroll,1,10
+OL27482W,The Hobbit,1937,JRR Tolkien,JRR,Tolkien,16,11
+OL1168083W,Nineteen Eighty-Four,1949,George Orwell,George,Orwell,17,12
