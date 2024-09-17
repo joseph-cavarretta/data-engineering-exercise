@@ -22,9 +22,9 @@
 **Setup and Execution**:
    - To run this demo, create a virtual env and execute the following commands from the root folder (this was developed with python 3.12.1):
      - `pip3 install -r ./requirements.txt`
-     - `python3 ./extract.py`
+     - `python3 ./src/extract.py`
        - Output files located in `/src/data/processed/`
-     - `python3 ./load.py`
+     - `python3 ./src/load.py`
        - Output files located in `/src/data/authors/` and `/src/data/books/`
 
 **Data Querying**:
