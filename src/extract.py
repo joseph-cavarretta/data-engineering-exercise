@@ -3,7 +3,6 @@ import sys
 import logging
 import time
 import requests
-import json
 import datetime
 import boto3
 from io import StringIO

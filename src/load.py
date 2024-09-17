@@ -55,8 +55,8 @@ def load_data_from_s3(bucket: str, key: str) -> pd.DataFrame:
 
 
 def insert_records(data: list, table: str, columns: str) -> None:
-    """ Mocked for demo. Inserts a dataframe to database as a table """
-    logger.info(f'Loading {len(data)} records to {table}')
+    """ Mocked for demo. Inserts a list of records to database """
+    logger.info(f'Inserting {len(data)} records to {table}')
     # creds = get_db_creds()
     # with conn as db_connect(creds):
     #   cursor = conn.cursor()
@@ -70,6 +70,7 @@ def generate_authors_table(df: pd.DataFrame) -> pd.DataFrame:
     authors = df.copy(deep=True)
     authors['created_datetime'] = pd.Timestamp('now')
     authors = authors[['author_id', 'author', 'author_firstname', 'author_lastname', 'created_datetime']]
+    authors.drop_duplicates(subset='author_id', inplace=True)
     records = authors.to_records(index=False).tolist()
     col_str = ','.join(authors.columns)
     insert_records(records, 'authors',col_str)
@@ -82,6 +83,8 @@ def generate_books_table(df: pd.DataFrame) -> pd.DataFrame:
     books = df.copy(deep=True)
     books['created_datetime'] = pd.Timestamp('now')
     books = books[['book_id', 'author_id', 'key', 'title', 'first_publish_year', 'created_datetime']]
+    # this should not contain duplicates, but just in case
+    books.drop_duplicates(subset=['book_id'], inplace=True)
     records = books.to_records(index=False).tolist()
     col_str = ','.join(books.columns)
     insert_records(records, 'books', col_str)
