@@ -27,7 +27,8 @@ SELECT
     , 2) AS avg_books_published_per_year
 FROM author a 
     JOIN books b ON a.id=b.author_id
-GROUP BY a.id;
+GROUP BY a.id
+;
 
 -- books published by year and total books published by each author
 SELECT
