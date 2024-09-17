@@ -39,7 +39,7 @@ def get_boto3_client() -> boto3.client:
     )
 
 
-def load_data_from_local(path) -> pd.DataFrame:
+def load_data_from_local(path: str) -> pd.DataFrame:
     """ For demo purposes load local file """
     logger.info('Reading data from local in path.')
     return pd.read_csv(path)
