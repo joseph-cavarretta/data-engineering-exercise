@@ -26,3 +26,15 @@ SELECT
 FROM author a 
     JOIN books b ON a.id=b.author_id
 ;
+
+-- books published by year and total books published by each author
+SELECT
+    a.full_name,
+    book_name,
+    first_publish_year,
+    COUNT(*) OVER (PARTITION BY a.full_name, first_publish_year) AS books_published_this_year,
+    COUNT(*) OVER (PARTITION BY a.full_name) AS total_books_published
+
+FROM authors a 
+    JOIN books b ON a.id=b.author_id 
+;

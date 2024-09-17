@@ -28,9 +28,10 @@
        - Output files located in `/src/data/authors/` and `/src/data/books/`
 
 **Data Querying**:
-   - Queries can be found in `/src/queries.sql` and contain queries for the following two metrics:
+   - Queries can be found in `/src/queries.sql` and contain queries for the following:
      - The number of books written each year by an author.
      - The average number of books written by an author per year.
+     - Books published by year and total books published by each author.
    - To optimize these queries for larger data sets, we could consider these options (for Redshift):
      - Add a DISTKEY on authors.id and books.author_id to colocate common values
      - Create an OLAP Rollup table (or materialized view) with aggregated metrics precomputed for authors and books
